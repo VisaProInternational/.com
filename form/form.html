@@ -495,17 +495,15 @@
 </select>
     <label for="phone">Phone *</label>
     <input type="text" name="phone" class="input-control" placeholder="Enter Phone No" required>
-	    
-	<a1>Email</a1>
-    <input type="email" name="email" placeholder="Email">
-	<a1>Email</a1>
-    <input type="email" name="email" class="input-control" placeholder="Email" required>
 	  
     <h3>Passport Information</h3>
-    <input type="text" name="passport_number" placeholder="Passport Number">
-    <input type="date" name="passport_issue" placeholder="Date of Issue">
-    <input type="date" name="passport_expiry" placeholder="Expiry Date">
-	<a1>Place of Issue</a1>
+    <label for="passport">Passport No *</label>
+    <input type="text" name="passport_no" class="input-control" placeholder="Enter Passport No" required>
+    <label for="date">Date of Issue *</label>
+    <input type="date" name="date_of_issue" class="input-control" placeholder="Date of Issue" required>
+    <label for="date">Date of Issue *</label>
+    <input type="date" name="date_of_expiration" class="input-control" placeholder="Date of Expiration" required>
+ <label for="place_of_issue">Place of Issue *</label>
     <select name="Please select">
       <option value="">Please select</option>
 <option value="Afghanistan">Afghanistan</option>
@@ -705,8 +703,7 @@
 <option value="Zimbabwe">Zimbabwe</option>
     </select>
 
-
-    <h3>Travel Information</h3>
+    <h3>Travel Purpose</h3>
     <select name="travel_purpose">
       <option value="humanitarian">Purpose: Humanitarian</option>
 <option value="">Select Visa Type</option>
@@ -730,6 +727,9 @@
 <option value="national_d">National Visa – Type D</option>
 <option value="schengen_c">Schengen Visa – Type C</option>
     </select>
+    <label for="distination_city">Distination City *</label>
+    <input type="text" name="distination_city" class="input-control" placeholder="Enter Distination City" required>
+	  
     <input type="text" name="destination_city" placeholder="Destination City">
     <input type="text" name="familymember" placeholder="Family Members">
     <input type="number" name="family" placeholder="Total Family Member">
