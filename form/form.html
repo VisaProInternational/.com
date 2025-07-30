@@ -766,10 +766,14 @@
 <textarea name="situation" rows="4" placeholder="Describe Your Situation" style="width: 300px; height: 100px; resize: none;" required></textarea>
 
 	  
- <label for="situation" class="upload-btn"> Select Describe Your Situation</label>
+<div class="upload-container">
+    <label for="situation" class="upload-btn">Upload Passport </label>
     <label class="file-upload">
-  <input type="file" name="supporting_docs">
-</label>
+        <input type="file" name="passport" id="passport">
+        <span id="file-name">passport</span>
+    </label>
+</div>
+	  
 
     <h3>Family Details</h3>
 <head>
