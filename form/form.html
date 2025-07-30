@@ -244,15 +244,27 @@
       <option value="widowed">Widowed</option>
     </select>
 
-    <h3>Contact Information</h3>
+    <a1>Contact Information</a1>
 
 	<a1>Address</a1>
-    <input type="text" name="address" placeholder="Address">
+    <input type="text" name="address" class="input-control" placeholder="Address" required>
 
-
-	<a1>Phone</a1>
-    <input type="tel" name="phone" placeholder="Phone Number">
-
+  <label for="phone">Phone Number:</label>
+  <div class="phone-group">
+    <select name="country_code" id="country_code">
+      <option value="+1">🇺🇸 +1</option>
+      <option value="+44">🇬🇧 +44</option>
+      <option value="+49">🇩🇪 +49</option>
+      <option value="+33">🇫🇷 +33</option>
+      <option value="+39">🇮🇹 +39</option>
+      <option value="+91">🇮🇳 +91</option>
+      <option value="+98">🇮🇷 +98</option>
+      <option value="+93" selected>🇦🇫 +93</option>
+      <option value="+90">🇹🇷 +90</option>
+      <!-- ادامه کشورها را می‌توان افزود -->
+    </select>
+    <input type="tel" name="phone_number" placeholder="Enter phone number">
+  </div>
 	<a1>Email</a1>
     <input type="email" name="email" placeholder="Email">
 
