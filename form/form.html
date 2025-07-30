@@ -706,7 +706,6 @@
     <h3>Travel Purpose</h3>
     <select name="travel_purpose">
       <option value="purpose_type">Purpose Type Of Visa</option>
-<option value="">Select Visa Type</option>
 <option value="humanitarian">Humanitarian Visa</option>
 <option value="tourist">Tourist Visa</option>
 <option value="student">Student Visa</option>
@@ -731,25 +730,37 @@
     <input type="text" name="distination_city" class="input-control" placeholder="Enter Distination City" required>
 	  
     <label for="total_family_member">Total Family Member *</label>
-    <input type="number" name="total_family_member" class="input-control" placeholder="Total Family Member" required>
+    <input type="number" name="total_family_member" class="input-control" placeholder="Total Family Member">
 	  
-<label for="total son">Sons *</label>
- <input type="number" name="total son" placeholder="Sons">  
+<label for="total son">Sons *</label
+<input type="number" name="total_sons" class="input-control" placeholder="Total Sons">
+
+<label for="total_doughters">Daughters *</label
+<input type="number" name="total_daughters" class="input-control" placeholder="Total Daughters">
 	  
-	  <label for="total daughters">Daughters *</label>
- <input type="number" name="total daughters" placeholder="Daughters">  
-	  
+ 
+
+	    
     <h3>Employment</h3>
-    <input type="text" name="PreviousPosition" placeholder="Previous Position">
-    <input type="text" name="organizationname" placeholder="Organization Name">
-    <input type="text" name="employeeidnumber" placeholder="Employee ID Number">
-    <select name="Political Rank">
+<label for="Previous_Positions">Daughters *</label
+<input type="text" name="total_daughters" class="input-control" placeholder="Previous Position">
+
+<label for="organization_name">Organization Name *</label
+<input type="text" name="organizationname" class="input-control" placeholder="Organization Name">
+
+<label for="employee_id_number">Organization Name *</label
+<input type="text" name="employee_id_number" class="input-control" placeholder="Employee ID Number">
+
+
+    <h3>Political Rank</h3>
+    <select name="political_rank">
+      <option value="please select rank">Plase Select Rank</option>	  
       <option value="">Militry force </option>
-      <option value="single">AF_NDS</option>
-      <option value="married">AF_Police</option>
-      <option value="divorced">AF_Senior official</option>
-      <option value="widowed"> Civil society activist</option>
-      <option value="widowed"> Journalist</option>
+      <option value="af_nds">AF_NDS</option>
+      <option value="af_police">AF_Police</option>
+      <option value="af_senior official">AF_Senior official</option>
+      <option value="civil_society activist"> Civil society activist</option>
+      <option value="journalist"> Journalist</option>
 
     </select>
 
