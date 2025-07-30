@@ -162,4 +162,75 @@ textarea[name="situation"]:focus {
         height: 120px;
     }
 }
+/* استایل کلی دکمه‌ها */
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+    overflow: hidden;
+    border: none; /* حذف حاشیه پیش‌فرض */
+}
+
+/* رنگ‌های اصلی دکمه */
+.button.primary {
+    background-color: #2980b9; /* آبی تیره‌تر */
+    color: #fff;
+}
+
+.button.primary:hover {
+    background-color: #2980b9; /* آبی تیره‌تر */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* رنگ‌های دکمه‌های موفقیت */
+.button.success {
+    background-color: #2ecc71; /* سبز */
+    color: #fff;
+}
+
+.button.success:hover {
+    background-color: #27ae60; /* سبز تیره‌تر */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* رنگ‌های دکمه‌های هشدار */
+.button.warning {
+    background-color: #f39c12; /* نارنجی */
+    color: #fff;
+}
+
+.button.warning:hover {
+    background-color: #e67e22; /* نارنجی تیره‌تر */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* رنگ‌های دکمه‌های خطر */
+.button.danger {
+    background-color: #e74c3c; /* قرمز */
+    color: #fff;
+}
+
+.button.danger:hover {
+    background-color: #c0392b; /* قرمز تیره‌تر */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* رنگ‌های دکمه‌های خنثی */
+.button.neutral {
+    background-color: #95a5a6; /* خاکستری */
+    color: #fff;
+}
+
+.button.neutral:hover {
+    background-color: #7f8c8d; /* خاکستری تیره‌تر */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
 
