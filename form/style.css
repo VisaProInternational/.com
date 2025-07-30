@@ -233,4 +233,29 @@ textarea[name="situation"]:focus {
     background-color: #7f8c8d; /* خاکستری تیره‌تر */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+footer {
+    background-color: #333; /* رنگ پس‌زمینه فوتر */
+    color: white; /* رنگ متن فوتر */
+    padding: 20px; /* فاصله داخلی فوتر */
+    text-align: center; /* تراز کردن دکمه‌ها در وسط */
+    position: fixed; /* ثابت کردن فوتر در پایین صفحه */
+    bottom: 0; /* چسباندن فوتر به پایین صفحه */
+    left: 0; /* چسباندن فوتر به سمت چپ صفحه */
+    width: 100%; /* عرض فوتر برابر با عرض صفحه */
+    box-sizing: border-box; /* جلوگیری از بیرون زدن فوتر از صفحه */
+}
+
+button {
+    background-color: #555; /* رنگ پس‌زمینه دکمه‌ها */
+    color: white; /* رنگ متن دکمه‌ها */
+    border: none; /* حذف حاشیه دکمه‌ها */
+    padding: 10px 20px; /* اندازه دکمه‌ها */
+    margin: 0 5px; /* فاصله بین دکمه‌ها */
+    border-radius: 5px; /* گرد کردن گوشه‌های دکمه‌ها */
+    cursor: pointer; /* تغییر شکل نشانگر موس */
+}
+
+button:hover {
+    background-color: #777; /* تغییر رنگ پس‌زمینه دکمه‌ها در حالت hover */
+}
 
