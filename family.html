@@ -1,98 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Humanitarian Visa Application - Italy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-    body {
-      margin: 0;
-      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
-      padding: 20px;
-      color: #333;
-    }
-    form {
-      background: white;
-      max-width: 800px;
-      margin: auto;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-      animation: fadeIn 1s ease-in-out;
-    }
-    h3 {
-      color: #2d3e50;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 5px;
-    }
-    input[type="text"],
-    input[type="email"],
-    input[type="date"],
-    input[type="tel"],
-    input[type="number"],
-    input[type="file"],
-    select,
-    textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0 20px 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-    }
-    input:focus, select:focus, textarea:focus {
-      border-color: #74ebd5;
-      outline: none;
-    }
-    input[type="submit"] {
-      background: #74ebd5;
-      color: #fff;
-      border: none;
-      padding: 15px;
-      border-radius: 10px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    input[type="submit"]:hover {
-      background: #56cfe1;
-    }
-    @keyframes fadeIn {
-      0% {opacity: 0; transform: translateY(30px);}
-      100% {opacity: 1; transform: translateY(0);}
-    }
-  </style>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Send Email Using JavaScript</title>
+<link rel="stylesheet" href="https://cdn.lineicons.com/5.0/lineicons.css" />
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <form>
-    <h3>Personal Information</h3>
 
-	<a1>First Name</a1>
-    <input type="text" name="first_name" placeholder="First Name">
+  <form action="#" id="contact-form">
+    <label for="Email">Email address *</label>
+    <input type="email" name="email" class="input-control" placeholder="Enter Email" required>
+    <label for="Name">Name *</label>
+    <input type="text" name="name" class="input-control" placeholder="Enter Name" required>
+    
+    <label for="LastName">Last Name *</label>
+    <input type="text" name="LastName" class="input-control" placeholder="Enter LastName" required>
+    
+<label for="gender">Gender *</label>
+<select name="gender" id="gender" class="input-control" required>
+  <option value="">Select Gender</option>
+  <option value="Male">Male</option>
+  <option value="Female">Female</option>
+  <option value="other">Other</option>
+</select>
+    <label for="dob">Date of Birth *</label>
+    <input type="date" name="dob" class="input-control" placeholder="date of birth" required>
+    
+    	<p1>Place of Birth</p1>
+    <input type="text" name="LastName" class="input-control" placeholder="Enter LastName" required>
+    <input type="text" name="place_of_birth" class="input-control" placeholder="Place of birth" required>
 
-	<p1>Last Name</p1>
-    <input type="text" name="last_name" placeholder="Last Name">
-    <select name="gender">
-      <option value="">Select Gender</option>
-      <option value="male">Male</option>
-      <option value="female">Female</option>
-      <option value="other">Other</option>
-    </select>
- 	<p1>Date of birth</p1>
-    <input type="date" name="dob" placeholder="Date of Birth">
-
-	<p1>Place of Birth</p1>
-    <input type="text" name="place_of_birth" placeholder="Place of Birth">
-
-	<a1>Nationality</a1>
-    <select name="nationality">
-      <option value="">Nationality</option>
-      <option value="">Select Country</option>
+    <label for="nationality">Nationality *</label>
+<select name="nationality" id="nationality" class="input-control" required>
+  <option value="">Nationality</option>
 <option value="Afghanistan">Afghanistan</option>
 <option value="Albania">Albania</option>
 <option value="Algeria">Algeria</option>
@@ -289,8 +235,8 @@
 <option value="Zambia">Zambia</option>
 <option value="Zimbabwe">Zimbabwe</option>
     </select>
-
-	<a1>Marital status</a1>
+</select>
+    	<a1>Marital status</a1>
     <select name="marital_status">
       <option value="single">Single</option>
       <option value="married">Married</option>
@@ -599,27 +545,16 @@
       <option value="yes">Yes</option>
       <option value="no">No</option>
     </select>
-<form action="#" method="post" enctype="multipart/form-data">
-  <label>Upload All of your family member Passport as a PDF File:</label>
-  <input type="file" name="passport"><br><br>
-
-  <label>Upload all family photos as a PDF:3x3-12x8:</label>
-  <input type="file" name="photo"><br><br>
-
-  <label>Upload one PDF with all family birth certificates:</label>
-  <input type="file" name="birth_certificate"><br><br>
-
-  <label>Upload all family Residence Proof as a PDF:</label>
-  <input type="file" name="residence_proof"><br><br>
-
-  <label>Upload All Family Additional Documents as a PDF:</label>
-  <input type="file" name="additional_docs"><br><br>
-
-</header>
-
-  <p>Your request will process in 10 days.</p>
-</footer>
-    <input type="submit" value="Submit Application">
+    <label for="Message">Message *</label>
+    <textarea name="message" class="contact-msg" rows="9" placeholder="Enter Message" required></textarea>
+    <button type="submit" class="btn-submit">Submit</button>
+    <div class="loader">
+    <i class="lni lni-spinner"></i>
+        </div>
+        <div class="form-message"></div>
   </form>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="script.js"></script>
 </body>
+
 </html>
