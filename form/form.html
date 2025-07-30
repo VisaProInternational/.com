@@ -249,6 +249,39 @@
 	<a1>Address</a1>
     <input type="text" name="address" class="input-control" placeholder="Address" required>
 
+
+<head>
+  <meta charset="UTF-8">
+  <title>Phone Number Input</title>
+  <style>
+    .phone-group {
+      display: flex;
+      max-width: 400px;
+      margin: 20px auto;
+      font-family: Arial, sans-serif;
+    }
+
+    .phone-group select {
+      width: 30%;
+      padding: 8px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px 0 0 4px;
+    }
+
+    .phone-group input[type="tel"] {
+      width: 70%;
+      padding: 8px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-left: none;
+      border-radius: 0 4px 4px 0;
+    }
+  </style>
+</head>
+<body>
+
+<form>
   <label for="phone">Phone Number:</label>
   <div class="phone-group">
     <select name="country_code" id="country_code">
@@ -265,6 +298,8 @@
     </select>
     <input type="tel" name="phone_number" placeholder="Enter phone number">
   </div>
+</form>
+
 	<a1>Email</a1>
     <input type="email" name="email" placeholder="Email">
 	<a1>Email</a1>
