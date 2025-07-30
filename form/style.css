@@ -137,3 +137,16 @@ select:focus {
     font-size: 0.95rem;
   }
 }
+textarea[name="situation"] {
+    width: 100%; /* عرض پیش‌فرض برای موبایل */
+    height: 150px; /* ارتفاع پیش‌فرض */
+}
+
+/* برای صفحه‌های بزرگتر از 768 پیکسل (معمولاً دسکتاپ) */
+@media (min-width: 768px) {
+    textarea[name="situation"] {
+        width: 300px; /* عرض برای دسکتاپ */
+        height: 100px; /* ارتفاع برای دسکتاپ */
+    }
+}
+
