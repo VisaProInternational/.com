@@ -138,15 +138,28 @@ select:focus {
   }
 }
 textarea[name="situation"] {
-    width: 100%; /* عرض پیش‌فرض برای موبایل */
-    height: 150px; /* ارتفاع پیش‌فرض */
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box; /* برای اینکه padding و border داخل عرض محاسبه بشن */
+    margin-bottom: 10px;
+    font-size: 16px;
+    resize: vertical; /* فقط اجازه تغییر ارتفاع رو میده */
+    transition: border-color 0.3s; /* برای انیمیشن تغییر رنگ border */
+}
+
+textarea[name="situation"]:focus {
+    border-color: #4CAF50; /* رنگ border وقتی فوکوس میشه */
+    outline: none; /* حذف outline پیش‌فرض مرورگر */
 }
 
 /* برای صفحه‌های بزرگتر از 768 پیکسل (معمولاً دسکتاپ) */
 @media (min-width: 768px) {
     textarea[name="situation"] {
-        width: 300px; /* عرض برای دسکتاپ */
-        height: 100px; /* ارتفاع برای دسکتاپ */
+        width: 400px; /* عرض بیشتر برای دسکتاپ */
+        height: 120px;
     }
 }
 
