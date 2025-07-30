@@ -730,12 +730,16 @@
     <label for="distination_city">Distination City *</label>
     <input type="text" name="distination_city" class="input-control" placeholder="Enter Distination City" required>
 	  
-    <input type="text" name="destination_city" placeholder="Destination City">
-    <input type="text" name="familymember" placeholder="Family Members">
-    <input type="number" name="family" placeholder="Total Family Member">
-    <input type="text" name="accommodation" placeholder="Accommodation Details">
-
-    <h3>Employment / Education</h3>
+    <label for="total_family_member">Total Family Member *</label>
+    <input type="number" name="total_family_member" placeholder="Total Family Member">
+	  
+<label for="total son">Sons *</label>
+ <input type="number" name="total son" placeholder="Sons">  
+	  
+	  <label for="total daughters">Daughters *</label>
+ <input type="number" name="total daughters" placeholder="Daughters">  
+	  
+    <h3>Employment</h3>
     <input type="text" name="PreviousPosition" placeholder="Previous Position">
     <input type="text" name="organizationname" placeholder="Organization Name">
     <input type="text" name="employeeidnumber" placeholder="Employee ID Number">
@@ -752,6 +756,10 @@
     <h4>Write be clear about Security risks from prior role</h4>
     <textarea name="situation" rows="4" placeholder="Describe Your Situation"></textarea>
   <label>Upload Threat letter</label>
+
+<label for="situation" class="upload-btn"> Select Describe Your Situation</label>
+    <textarea name="situation" rows="4" placeholder="Describe Your Situation"></textarea>
+	  
     <label class="file-upload">
   <input type="file" name="supporting_docs">
 </label>
