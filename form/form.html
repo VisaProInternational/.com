@@ -785,5 +785,33 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="script.js"></script>
 </body>
+<script 
+  src="https://www.paypal.com/sdk/js?client-id=BAACbeAzsST2dOwd6GaCGRRLK8_UnjZmUTWlWEYvL2PA1Dq326odJif-U4T3KcHgyH37F4I3LObyP5rvZ8&components=hosted-buttons&disable-funding=venmo&currency=GBP">
+</script>
 
+<!-- دکمه PayPal -->
+<h4>لطفاً ابتدا پرداخت انجام دهید:</h4>
+<div id="paypal-container-8QMJ5AYWQ8UC6"></div>
+
+<!-- فرم شما -->
+<div style="display: block; margin-top: 20px;">
+    <button type="submit" class="btn-submit" id="submitBtn" disabled>Submit</button>
+    <div class="loader">
+        <i class="lni lni-spinner"></i>
+    </div>
+    <div class="form-message"></div>
+</div>
+
+<!-- اسکریپت PayPal و فعال‌سازی دکمه Submit -->
+<script>
+  paypal.HostedButtons({
+    hostedButtonId: "8QMJ5AYWQ8UC6",
+    onApprove: function(data, actions) {
+      // زمانی که پرداخت موفق بود، دکمه Submit فعال شود
+      alert("پرداخت با موفقیت انجام شد ✅");
+      document.getElementById("submitBtn").disabled = false;
+    }
+  }).render("#paypal-container-8QMJ5AYWQ8UC6");
+</script>
+</body>
 </html>
