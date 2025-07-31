@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>PayPal Form Integration</title>
-  <link rel="stylesheet" href="style.css">
-  <script 
-    src="https://www.paypal.com/sdk/js?client-id=BAACbeAzsST2dOwd6GaCGRRLK8_UnjZmUTWlWEYvL2PA1Dq326odJif-U4T3KcHgyH37F4I3LObyP5rvZ8&components=hosted-buttons&disable-funding=venmo&currency=GBP">
-  </script>
-<head>
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
   <meta charset="UTF-8">
@@ -793,12 +786,13 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="script.js"></script>
 
-    <div id="submit-wrapper" style="display: none;">
-      <button type="submit" class="btn-submit">Submit</button>
-      <div class="loader"><i class="lni lni-spinner"></i></div>
-      <div class="form-message"></div>
+ <div style="display: block;">
+    <button type="submit" class="btn-submit">Submit</button>
+    <div class="loader">
+        <i class="lni lni-spinner"></i>
     </div>
-  </form>
+    <div class="form-message"></div>
+</div>
 
   <script src="script.js"></script>
 </body>
