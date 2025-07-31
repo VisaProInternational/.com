@@ -269,5 +269,24 @@ footer {
     transform: translateY(1px); /* جلوه فشردن دکمه */
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* سایه کمتر در حالت فشردن */
 }
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.btn-submit {
+  padding: 10px 20px;
+  background-color: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.loader {
+  display: inline-block;
+  margin-left: 10px;
+  color: gray;
+}
 
 
