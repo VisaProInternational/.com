@@ -790,43 +790,6 @@
   </form>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="script.js"></script>
-</body><h3>برای ادامه، اول پرداخت انجام دهید:</h3>
-<a href="https://www.paypal.com/ncp/payment/39N7S9ZQMYGUU" target="_blank" class="paypal-button">💳 پرداخت با PayPal</a>
-
-<br><br>
-
-<label>
-  <input type="checkbox" id="confirmPayment" onclick="enableSubmit()"> من پرداخت را انجام دادم
-</label>
-
-<br><br>
-
-<button type="submit" class="btn-submit" id="submitBtn" disabled>ثبت</button>
-
-<script>
-  function enableSubmit() {
-    const check = document.getElementById("confirmPayment");
-    document.getElementById("submitBtn").disabled = !check.checked;
-  }
-</script>
-
-<style>
-  .paypal-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #ffc439;
-    color: #000;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 5px;
-    font-family: sans-serif;
-    transition: background-color 0.3s ease;
-  }
-
-  .paypal-button:hover {
-    background-color: #ffb347;
-  }
-</style>
 
 </body>
 </html>
