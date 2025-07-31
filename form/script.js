@@ -8,7 +8,20 @@
 const googleSheetWebhookURL = "https://script.google.com/macros/s/AKfycbxkFO4k5Gz6hBRnpsEaPb-bKsS7_Rd6kSl6EZ2zx-9KICNrNHgADnOu0FphfMfl2ikq/exec";
 const msg = document.querySelector(".form-message");
 const loader = document.querySelector(".loader");
+// 1. PayPal Button Setup
+paypal.HostedButtons({
+  hostedButtonId: "8QMJ5AYWQ8UC6",
+}).render("#paypal-container-8QMJ5AYWQ8UC6");
 
+// 2. فعال‌سازی دکمه Submit بعد از پرداخت موفق
+window.addEventListener("message", function (event) {
+  if (event.origin.includes("paypal.com")) {
+    if (event.data && event.data.event === "hostedButtonPaymentAuthorized") {
+      document.getElementById("submit-wrapper").style.display = "block";
+      document.getElementById("paypal-container-8QMJ5AYWQ8UC6").style.display = "none";
+    }
+  }
+});
 window.onload = function() {
     document.getElementById("contact-form").addEventListener("submit", function(event) {
         event.preventDefault();
