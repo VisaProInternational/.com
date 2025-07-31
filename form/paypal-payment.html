@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>پرداخت با PayPal</title>
+  <style>
+    body {
+      font-family: Tahoma, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+      padding: 50px;
+    }
+    h2 {
+      color: #333;
+    }
+    .paypal-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #ffc439;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 16px;
+      margin: 20px 0;
+      transition: background-color 0.3s ease;
+    }
+    .paypal-button:hover {
+      background-color: #ffb347;
+    }
+    .checkbox {
+      margin: 20px 0;
+      font-size: 16px;
+    }
+    .btn-submit {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn-submit:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>مرحله 1: پرداخت با PayPal</h2>
+  <a href="https://www.paypal.com/ncp/payment/39N7S9ZQMYGUU" target="_blank" class="paypal-button">
+    💳 پرداخت با پیپال
+  </a>
+
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" id="confirmPayment" onclick="enableSubmit()">
+      من پرداخت را انجام دادم
+    </label>
+  </div>
+
+  <button class="btn-submit" id="submitBtn" disabled>ادامه و ثبت اطلاعات</button>
+
+  <script>
+    function enableSubmit() {
+      const check = document.getElementById("confirmPayment");
+      document.getElementById("submitBtn").disabled = !check.checked;
+    }
+  </script>
+
+</body>
+</html>
