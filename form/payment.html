@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VisaPro - Payment</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .payment-container {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+    }
+
+    .payment-container h2 {
+      margin-bottom: 15px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .payment-container p {
+      margin-bottom: 25px;
+      font-size: 16px;
+      color: #666;
+    }
+
+    .submit {
+      margin-top: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .submit:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 500px) {
+      .payment-container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="payment-container">
+    <h2>Pay $10 Service Fee</h2>
+    <p>Please click the button below to proceed with your crypto payment.</p>
+
+    <form method="POST" action="http://btcpay.local/api/v1/invoices" class="btcpay-form btcpay-form--block">
+      <input type="hidden" name="storeId" value="E3xw9EgLNC5ogEPJgYsfxwCaFjSMSHeXp6YQ5XuqNnag" />
+      <input type="hidden" name="jsonResponse" value="true" />
+      <input type="hidden" name="orderId" value="auto" />
+      <input type="hidden" name="checkoutDesc" value="VisaPro Service Fee" />
+      <input type="hidden" name="browserRedirect" value="https://visaprointernational.github.io/.com/about.html" />
+      <input type="hidden" name="notifyEmail" value="VisaProInternational@tuta.io" />
+      <input type="hidden" name="checkoutQueryString" value="lang=en" />
+      <input type="hidden" name="price" value="10" />
+      <input type="hidden" name="currency" value="USD" />
+      <input type="image" class="submit" name="submit" src="http://btcpay.local/img/paybutton/pay.svg" style="width: 209px;" alt="Pay with BTCPay Server">
+    </form>
+  </div>
+
+  <script>
+    if (!window.btcpay) {
+      var script = document.createElement('script');
+      script.src = "http://btcpay.local/modal/btcpay.js";
+      document.head.appendChild(script);
+    }
+
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200 && this.responseText) {
+          window.btcpay.appendInvoiceFrame(JSON.parse(this.responseText).invoiceId);
+        }
+      };
+      xhttp.open('POST', event.target.getAttribute('action'), true);
+      xhttp.send(new FormData(event.target));
+    }
+
+    document.querySelectorAll(".btcpay-form").forEach(function (el) {
+      if (!el.dataset.initialized) {
+        el.addEventListener('submit', handleFormSubmit);
+        el.dataset.initialized = true;
+      }
+    });
+  </script>
+</body>
+</html>
