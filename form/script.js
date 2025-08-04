@@ -1,3 +1,14 @@
+(function() {
+    // https://dashboard.emailjs.com/admin/account
+    emailjs.init({
+      publicKey: "LpjT6PFXqnLEJni6E",
+    });
+})();
+
+const googleSheetWebhookURL = "https://script.google.com/macros/s/AKfycbxkFO4k5Gz6hBRnpsEaPb-bKsS7_Rd6kSl6EZ2zx-9KICNrNHgADnOu0FphfMfl2ikq/exec";
+const msg = document.querySelector(".form-message");
+const loader = document.querySelector(".loader");
+
 window.onload = function() {
     document.getElementById("contact-form").addEventListener("submit", function(event) {
         event.preventDefault();
